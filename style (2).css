@@ -1,0 +1,54 @@
+body {
+   font-family:sans-serif; 
+}
+
+#score {
+  text-align:center; height:50px; line-height:50px; font-size:30px;   
+}
+
+#scene {
+    position:fixed; top:75px; left:75px; right:75px; bottom:75px;
+    cursor:cell;
+}
+
+#bouton_demarrer {
+    position:absolute; top:50%; left:50%; width:300px; height:80px; margin-left:-150px; margin-top:-40px;
+    text-align:center; line-height:80px;
+    background-color:black; color:white; font-size:60px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:top 0.5s, background-color 0.25s, opacity 0.5s;
+}
+
+#bouton_demarrer:hover {
+    background-color:orange;
+}
+
+#bouton_demarrer.disparu {
+    top:150%; opacity:0;
+}
+
+#cible {
+   position:absolute; width:100px; height:100px; margin-left:-50px; margin-top:0px;
+    transform:scale(0.1); opacity:0;
+}
+
+.cercle {
+ height:100%;
+}
+
+#cible , .cercle {
+    border-radius:50%; overflow:hidden;
+    box-sizing:border-box; border:5px solid red; padding:5px;
+    transition:transform 0.5s 0.25s, opacity 1s, border-color 0.25s, margin-top 0.5s 0.5s;
+}
+
+#cible.visible {
+   transform:scale(1); opacity:1; margin-top:-50px;
+    transition:transform 0.1s, opacity 0.5s, border-color 0.25s, margin-top 0.5s;
+}
+
+#cible.touchee , #cible.touchee .cercle {
+    border-color:orange;
+}
+
